@@ -1,70 +1,96 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📦 Nome do Projeto
 
-## Available Scripts
+Descrição curta do projeto. Explique em poucas linhas o que a aplicação faz e qual problema ela resolve.
 
-In the project directory, you can run:
+🚀 Tecnologias Utilizadas
 
-### `npm start`
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Create React App
 
-### `npm test`
+Tailwind CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+JavaScript (ES6+)
 
-### `npm run build`
+HTML5
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+CSS3
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📁 Estrutura do Projeto
+src/
+├── components/     # Componentes reutilizáveis
+├── pages/          # Páginas da aplicação
+├── assets/         # Imagens, ícones, etc.
+├── styles/         # Estilos globais (se houver)
+├── App.js
+├── index.js
+└── index.css       # Tailwind CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+⚙️ Pré-requisitos
 
-### `npm run eject`
+Antes de começar, você vai precisar ter instalado em sua máquina:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Node.js
+ (versão recomendada LTS)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm ou yarn
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+▶️ Como executar o projeto
+1. Clone o repositório
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Acesse a pasta do projeto
+cd nome-do-repositorio
 
-## Learn More
+3. Instale as dependências
+npm install
+# ou
+yarn install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Inicie a aplicação
+npm start
+# ou
+yarn start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+A aplicação estará disponível em:
+👉 http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🎨 Tailwind CSS
 
-### Analyzing the Bundle Size
+O Tailwind CSS já está configurado no projeto.
+Os estilos podem ser aplicados diretamente nas classes dos componentes JSX.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Exemplo:
 
-### Making a Progressive Web App
+<button className="bg-blue-500 text-white px-4 py-2 rounded">
+  Clique aqui
+</button>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🧪 Scripts Disponíveis
 
-### Advanced Configuration
+npm start – Inicia o servidor de desenvolvimento
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm run build – Gera a versão de produção
 
-### Deployment
+npm test – Executa os testes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+npm run eject – Ejeta a configuração do CRA (atenção ⚠️)
 
-### `npm run build` fails to minify
+📌 Próximas melhorias (opcional)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ Adicionar testes
+
+ Integração com API
+
+ Responsividade avançada
+
+ Dark mode
+
+👤 Autor
+
+Feito por mvdevelop 👋
+Se quiser, entre em contato ou contribua com o projeto!
