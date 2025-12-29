@@ -1,12 +1,14 @@
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
 }
 
-html, body, #root {
-  background-color: #efefef;
-  height: 100%;
+@layer components {
+  .minHeight {
+    min-height: calc(100vh - 160px);
+  }
 }

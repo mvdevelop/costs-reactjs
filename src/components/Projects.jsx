@@ -1,25 +1,16 @@
 
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
-import styles from './Projects.module.css';
-
-import Message from './layout/Message';
 import Container from './layout/Container';
 import LinkButton from './LinkButton';
 import ProjectCard from './project/ProjectCard';
 import Loadings from './layout/Loadings';
 
 function Projects() {
-  const [ projects, setProjects ] = useState([]);
-  const [ removeLoading, setRemoveLoading ] = useState(false);
-  const [ projectMessage, setProjectMessage ] = useState('');
-
+  const [projects, setProjects] = useState([]);
+  const [removeLoading, setRemoveLoading] = useState(false);
+  
   const location = useLocation();
-  let message = '';
-  if (location.state) {
-    message = location.state.message
-  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -31,56 +22,71 @@ function Projects() {
       })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data)
-        setProjects(data)
-        setRemoveLoading(true)
+        setProjects(data);
+        setRemoveLoading(true);
       })
       .catch((e) => console.log(e));
-    }, 1500)
+    }, 1500);
   }, []);
 
-function removeProject(id) {
-
-  fetch(`http://localhost:5000/projects/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-  .then(resp => resp.json())
-  .then(() => {
-    setProjects(projects.filter((project) => project.id !== id))
-    // message
-    setProjectMessage('Projeto removido com sucesso!')
-  })
-  .catch((e) => console.log(e));
-  
-}
+  function removeProject(id) {
+    fetch(`http://localhost:5000/projects/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(resp => resp.json())
+    .then(() => {
+      setProjects(projects.filter((project) => project.id !== id));
+    })
+    .catch((e) => console.log(e));
+  }
 
   return (
-    <div className={styles.project_container}>
-      <div className={styles.title_container}>
-        <h1>Meus Projetos</h1>
+    <div className="py-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Meus Projetos</h1>
+          <p className="text-gray-600 mt-2">
+            Gerencie todos os seus projetos em um só lugar
+          </p>
+        </div>
         <LinkButton to="/newproject" text="Criar Projeto" />
       </div>
-      {message && <Message type="success" msg={message} />}
-      {projectMessage && <Message type="success" msg={projectMessage} />}
+
       <Container customClass="start">
-          {projects.length > 0 &&
-            projects.map((project) => <ProjectCard
-            id={project.id}
-            name={project.name}
-            budget={project.budget}
-            category={project?.category?.name}
-            key={project.id}
-            handleRemove={removeProject} />)}
-          {!removeLoading && <Loadings />}
-          {removeLoading && projects.length === 0 && (
-            <p>Não há projetos cadastrados!</p>
-          )}
+        {projects.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            {projects.map((project) => (
+              <ProjectCard
+                id={project.id}
+                name={project.name}
+                budget={project.budget}
+                category={project?.category?.name}
+                key={project.id}
+                handleRemove={removeProject}
+              />
+            ))}
+          </div>
+        ) : !removeLoading ? (
+          <Loadings />
+        ) : (
+          <div className="text-center py-12 w-full">
+            <div className="bg-gray-100 rounded-2xl p-8 max-w-md mx-auto">
+              <p className="text-gray-600 text-lg mb-4">
+                Não há projetos cadastrados ainda!
+              </p>
+              <p className="text-gray-500 mb-6">
+                Crie seu primeiro projeto para começar a gerenciar seus orçamentos.
+              </p>
+              <LinkButton to="/newproject" text="Criar Primeiro Projeto" />
+            </div>
+          </div>
+        )}
       </Container>
     </div>
-  )
+  );
 }
 
 export default Projects;

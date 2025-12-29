@@ -1,13 +1,10 @@
 
-import styles from './Container.modules.css';
-
 function Container(props) {
   return (
-    <div className={`${styles.container} 
-      ${props.customClass}`}>
+    <div className={`container mx-auto px-4 md:px-6 ${props.customClass}`}>
       {props.children}
     </div>
-  )
+  );
 }
 
 export default Container;
