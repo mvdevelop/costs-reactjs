@@ -40,7 +40,7 @@ npm ou yarn
 
 ▶️ Como executar o projeto
 1. Clone o repositório
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/mvdevelop/costs-reactjs.git
 
 2. Acesse a pasta do projeto
 cd nome-do-repositorio
@@ -90,7 +90,4 @@ npm run eject – Ejeta a configuração do CRA (atenção ⚠️)
 
  Dark mode
 
-👤 Autor
-
-Feito por mvdevelop 👋
-Se quiser, entre em contato ou contribua com o projeto!
+👤 mvdevelop
