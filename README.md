@@ -1,5 +1,5 @@
 
-📦 Nome do Projeto
+📦 Costs 
 
 Descrição curta do projeto. Explique em poucas linhas o que a aplicação faz e qual problema ela resolve.
 
